@@ -7,19 +7,18 @@ import {
   useCallback,
 } from "react";
 
-import { LuRefreshCw } from "react-icons/lu";
-
-type FocusClockProps = {
+type ClockProps = {
   seconds: number;
   updateTimer: boolean;
   setUpdateTimer: Dispatch<SetStateAction<boolean>>;
 };
 
-export default function FocusClock({
+import { LuRefreshCw } from "react-icons/lu";
+export default function Clock({
   seconds,
   updateTimer,
   setUpdateTimer,
-}: FocusClockProps) {
+}: ClockProps) {
   const [started, setStarted] = useState(false);
   const [timer, setTimer] = useState(seconds);
   const [isRunning, setIsRunning] = useState(false);
@@ -74,8 +73,8 @@ export default function FocusClock({
   const minutes = Math.floor(timer / 60);
   const remainingSeconds = timer % 60;
   return (
-    <div className="flex flex-col justify-center items-center m-[20px] bg-secondary rounded-lg p-6 w-full">
-      <h1 className="align-middle font-header text-9xl tracking-wide text-bg pb-14 py-7">
+    <>
+      <h1 className="items-center font-header text-9xl tracking-wide text-bg pb-14 py-7">
         {`${minutes.toString().padStart(2, "0")}:${remainingSeconds
           .toString()
           .padStart(2, "0")}`}
@@ -96,6 +95,6 @@ export default function FocusClock({
           </button>
         )}
       </div>
-    </div>
+    </>
   );
 }

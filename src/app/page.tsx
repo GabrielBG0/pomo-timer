@@ -2,7 +2,7 @@
 import { LuBadgePlus, LuSettings } from "react-icons/lu";
 import React, { useState, useEffect } from "react";
 import Modal from "../components/Modal";
-import FocusClock from "@/components/FocusClock";
+import Timer from "@/components/Timer";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -27,7 +27,7 @@ export default function Home() {
       )}
       <div className="h-full w-2/5 flex flex-col justify-start items-center">
         <header className="header flex justify-between items-center w-full h-[100px]">
-          <h1 className="align-middle font-header text-4xl tracking-wide text-primary">
+          <h1 className="items-center font-header text-4xl tracking-wide text-primary">
             Pomodoro Timer
           </h1>
           <button
@@ -38,8 +38,10 @@ export default function Home() {
           </button>
         </header>
         <div className="flex flex-col justify-start items-center p-[20px] w-full">
-          <FocusClock
-            seconds={focusTime}
+          <Timer
+            focusTime={focusTime}
+            breakTime={breakTime}
+            longBreakTime={longBreakTime}
             updateTimer={updateTimer}
             setUpdateTimer={setUpdateTimer}
           />

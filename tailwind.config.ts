@@ -16,6 +16,7 @@ const config: Config = {
         bg: "#FFC9C9",
         primary: "#822C26",
         secondary: "#D16F6F",
+        border: "#eca29d",
       },
     },
     plugins: [],

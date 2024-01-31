@@ -42,45 +42,47 @@ export default function Modal({
 
   return (
     <div className="fixed inset-0 bg-red-300 bg-opacity-50 overflow-y-auto h-full w-full flex items-center justify-center z-10">
-      <div className="p-8 border w-96 shadow-lg rounded-md bg-red-100">
-        <div className="text-center">
-          <h3 className="text-2xl font-header text-primary">Modal Title</h3>
-          <div className="mt-2 px-7 py-3 ">
-            <form>
-              <label>
-                Break Time:
-                <input
-                  type="number"
-                  value={localBreakTime}
-                  onChange={(e) => setLocalBreakTime(Number(e.target.value))}
-                />
-              </label>
-              <label>
+      <div className="p-8 border shadow-lg rounded-md bg-red-100">
+        <div className="text-center h-full flex flex-col justify-between items-center">
+          <h2 className="text-6xl font-header text-primary">Configs</h2>
+          <div className="flex justify-center items-center">
+            <form className="flex flex-col justify-start content-evenly items-center h-full">
+              <label className="flex flex-col justify-center items-center font-header text-primary py-6 text-3xl">
                 Focus Time:
                 <input
                   type="number"
-                  value={localFocusTime}
-                  onChange={(e) => setLocalFocusTime(Number(e.target.value))}
+                  value={localFocusTime.toString()}
+                  onChange={(e) => setLocalBreakTime(Number(e.target.value))}
+                  className="w-[50%] mt-2 h-10 rounded-md font-body text-1xl p-4 appearance-none"
+                  min={0}
                 />
               </label>
-              <label>
+              <label className="flex flex-col justify-center items-center w-full font-header text-primary py-6 text-3xl">
+                Break Time:
+                <input
+                  type="number"
+                  value={localBreakTime.toString()}
+                  onChange={(e) => setLocalBreakTime(Number(e.target.value))}
+                  className="w-[50%] mt-2 h-10 rounded-md font-body text-1xl p-4 appearance-none"
+                  min={0}
+                />
+              </label>
+              <label className="flex flex-col justify-center items-center w-full font-header text-primary py-6 text-3xl">
                 Long Break Time:
                 <input
                   type="number"
-                  value={localLongBreakTime}
-                  onChange={(e) =>
-                    setLocalLongBreakTime(Number(e.target.value))
-                  }
+                  value={localLongBreakTime.toString()}
+                  onChange={(e) => setLocalBreakTime(Number(e.target.value))}
+                  className="w-[50%] mt-2 h-10 rounded-md font-body text-1xl p-4 appearance-none"
+                  min={0}
                 />
               </label>
-              <button onClick={handleClose}>Close</button>
             </form>
           </div>
           <div className="flex justify-center mt-4">
-            {/* Using useRouter to dismiss modal*/}
             <button
               onClick={handleClose}
-              className="px-4 py-2 bg-blue-500 text-white text-base font-medium rounded-md shadow-sm hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300"
+              className="flex justify-center items-center text-bg rounded-lg bg-primary py-2 px-4 font-header text-2xl transform transition-transform duration-150 ease-in-out active:scale-95"
             >
               Close
             </button>
