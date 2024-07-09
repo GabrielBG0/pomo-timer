@@ -27,7 +27,9 @@ export default function Clock({
 
   const audio = useRef<HTMLAudioElement | undefined>(
     typeof Audio !== "undefined"
-      ? new Audio("https://github.com/GabrielBG0/test-audio/raw/main/snap.mp3")
+      ? new Audio(
+          "https://github.com/GabrielBG0/pomo-timer/raw/main/public/clack.mp3"
+        )
       : undefined
   );
 
