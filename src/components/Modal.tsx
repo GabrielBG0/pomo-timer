@@ -52,7 +52,7 @@ export default function Modal({
                 <input
                   type="number"
                   value={localFocusTime.toString()}
-                  onChange={(e) => setLocalBreakTime(Number(e.target.value))}
+                  onChange={(e) => setLocalFocusTime(Number(e.target.value))}
                   className="w-[50%] mt-2 h-10 rounded-md font-body text-1xl p-4 appearance-none"
                   min={0}
                 />
@@ -72,7 +72,9 @@ export default function Modal({
                 <input
                   type="number"
                   value={localLongBreakTime.toString()}
-                  onChange={(e) => setLocalBreakTime(Number(e.target.value))}
+                  onChange={(e) =>
+                    setLocalLongBreakTime(Number(e.target.value))
+                  }
                   className="w-[50%] mt-2 h-10 rounded-md font-body text-1xl p-4 appearance-none"
                   min={0}
                 />
