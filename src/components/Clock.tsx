@@ -5,6 +5,7 @@ import {
   Dispatch,
   SetStateAction,
   useCallback,
+  useRef,
 } from "react";
 
 type ClockProps = {
@@ -24,6 +25,12 @@ export default function Clock({
   const [isRunning, setIsRunning] = useState(false);
   const [finished, setFinished] = useState(false);
 
+  const audio = useRef<HTMLAudioElement | undefined>(
+    typeof Audio !== "undefined"
+      ? new Audio("https://github.com/GabrielBG0/test-audio/raw/main/snap.mp3")
+      : undefined
+  );
+
   function handleTimerButtonClick() {
     if (isRunning) {
       setIsRunning(false);
@@ -32,6 +39,8 @@ export default function Clock({
     } else {
       setIsRunning(true);
     }
+
+    audio.current?.play();
   }
 
   const resetTimer = useCallback(() => {
