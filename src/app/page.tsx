@@ -25,16 +25,16 @@ export default function Home() {
           setLongBreakTime={setLongBreakTime}
         />
       )}
-      <div className="h-full w-2/5 flex flex-col justify-start items-center">
+      <div className="h-full w-full max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-start items-center">
         <header className="header flex justify-between items-center w-full h-[100px]">
-          <h1 className="items-center font-header text-4xl tracking-wide text-primary">
+          <h1 className="items-center font-header text-2xl sm:text-3xl lg:text-4xl tracking-wide text-primary">
             Pomodoro Timer
           </h1>
           <button
             onClick={() => setShowModal(true)}
             className="flex justify-center items-center text-bg rounded-md bg-primary p-2"
           >
-            <LuSettings className="text-2xl" />
+            <LuSettings className="text-xl sm:text-2xl" />
           </button>
         </header>
         <div className="flex flex-col justify-start items-center p-[20px] w-full">
@@ -45,7 +45,7 @@ export default function Home() {
             updateTimer={updateTimer}
             setUpdateTimer={setUpdateTimer}
           />
-          <div className="header flex justify-center items-center w-full h-20 font-body text-3xl text-primary">
+          <div className="header flex justify-center items-center w-full h-16 sm:h-20 font-body text-xl sm:text-2xl lg:text-3xl text-primary">
             Focus Time!
           </div>
         </div>
