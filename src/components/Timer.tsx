@@ -55,12 +55,12 @@ export default function Timer({
   }
 
   return (
-    <div className="flex flex-col justify-center items-center m-[20px] bg-secondary rounded-lg px-6 py-12 w-full">
-      <div className="flex justify-evenly items-center w-full text-bg">
+    <div className="flex flex-col justify-center items-center m-[20px] bg-secondary rounded-lg px-3 sm:px-6 py-8 sm:py-12 w-full">
+      <div className="flex flex-col sm:flex-row justify-evenly items-center w-full text-bg gap-2 sm:gap-4">
         <button
           className={`${
             focusTimerSelected === true ? "border-solid" : "border-dashed"
-          } border-[2px] border-bg text-2xl px-4 py-2 rounded-md `}
+          } border-[2px] border-bg text-sm sm:text-lg lg:text-2xl px-3 sm:px-4 py-2 rounded-md w-full sm:w-auto`}
           onClick={() => updateSelected(TimerType.FOCUS)}
         >
           Focus Time
@@ -68,7 +68,7 @@ export default function Timer({
         <button
           className={`${
             breakTimerSelected === true ? "border-solid" : "border-dashed"
-          } border-[2px] border-bg text-2xl px-4 py-2 rounded-md `}
+          } border-[2px] border-bg text-sm sm:text-lg lg:text-2xl px-3 sm:px-4 py-2 rounded-md w-full sm:w-auto`}
           onClick={() => updateSelected(TimerType.BREAK)}
         >
           Break Time
@@ -76,7 +76,7 @@ export default function Timer({
         <button
           className={`${
             longBreakTimerSelected === true ? "border-solid" : "border-dashed"
-          } border-[2px] border-bg text-2xl px-4 py-2 rounded-md `}
+          } border-[2px] border-bg text-sm sm:text-lg lg:text-2xl px-3 sm:px-4 py-2 rounded-md w-full sm:w-auto`}
           onClick={() => updateSelected(TimerType.LONG_BREAK)}
         >
           Long Break Time

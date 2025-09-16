@@ -85,24 +85,24 @@ export default function Clock({
   const remainingSeconds = timer % 60;
   return (
     <>
-      <h1 className="items-center font-header text-9xl tracking-wide text-bg pb-14 py-7">
+      <h1 className="items-center font-header text-5xl sm:text-7xl lg:text-9xl tracking-wide text-bg pb-8 sm:pb-14 py-4 sm:py-7">
         {`${minutes.toString().padStart(2, "0")}:${remainingSeconds
           .toString()
           .padStart(2, "0")}`}
       </h1>
-      <div className="flex items-center justify-evenly w-full">
+      <div className="flex flex-col sm:flex-row items-center justify-evenly w-full gap-3 sm:gap-0">
         <button
           onClick={handleTimerButtonClick}
-          className="flex justify-center items-center text-bg rounded-lg bg-primary py-2 px-8 font-header text-2xl transform transition-transform duration-150 ease-in-out active:scale-95"
+          className="flex justify-center items-center text-bg rounded-lg bg-primary py-2 px-6 sm:px-8 font-header text-lg sm:text-xl lg:text-2xl transform transition-transform duration-150 ease-in-out active:scale-95 w-full sm:w-auto"
         >
           {setButtonText()}
         </button>
         {!finished && started && (
           <button
-            className="flex justify-center items-center text-bg rounded-lg bg-primary p-2 font-header text-2xl transform transition-transform duration-150 ease-in-out active:scale-95"
+            className="flex justify-center items-center text-bg rounded-lg bg-primary p-2 font-header text-lg sm:text-xl lg:text-2xl transform transition-transform duration-150 ease-in-out active:scale-95"
             onClick={() => resetTimer()}
           >
-            <LuRefreshCw className="text-2xl" />
+            <LuRefreshCw className="text-lg sm:text-xl lg:text-2xl" />
           </button>
         )}
       </div>
