@@ -1,9 +1,49 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pomo Timer
 
-## Getting Started
+A simple Pomodoro timer web app built with Next.js. This project provides a minimal, focused timer UI so you can work in time-boxed sessions and take regular breaks — ideal when following the Pomodoro Technique.
 
-First, run the development server:
+Quick links
+- Repository: https://github.com/GabrielBG0/pomo-timer
+- Live (recommended): Deploy to Vercel for zero-config hosting
 
+---
+
+## Features
+
+- Lightweight Next.js app (App Router)
+- Easy to run locally with npm / yarn / pnpm / bun
+- Start / pause / reset timer
+- Configurable session and break lengths (edit in the UI)
+- Optimized for modern browsers; ready to deploy to Vercel
+
+(If you’d like, I can add screenshots, demo GIFs, or badges.)
+
+---
+
+## Getting started
+
+Prerequisites
+- Node.js 16+ (or your preferred supported version for Next.js)
+- npm / yarn / pnpm / bun
+
+1. Clone the repo
+```bash
+git clone https://github.com/GabrielBG0/pomo-timer.git
+cd pomo-timer
+```
+
+2. Install dependencies (pick one)
+```bash
+npm install
+# or
+yarn
+# or
+pnpm install
+# or
+bun install
+```
+
+3. Run the development server
 ```bash
 npm run dev
 # or
@@ -14,23 +54,43 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 in your browser. The app uses the `app` directory — start editing `app/page.tsx` to modify the home page.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Available scripts
 
-## Learn More
+Common scripts you should find in package.json:
 
-To learn more about Next.js, take a look at the following resources:
+- `dev` — start the Next.js development server
+- `build` — build the app for production
+- `start` — run the production build locally
+- `lint` — run linter (if configured)
+- `format` — run code formatter (if configured)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Example:
+```bash
+npm run build
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The easiest way to deploy is Vercel:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Push your branch to GitHub
+2. Import the repository to Vercel (https://vercel.com/new)
+3. Use the default settings — Vercel detects Next.js automatically
+
+You can also deploy to any provider that supports Node.js and Next.js builds.
+
+---
+
+## Roadmap / Ideas
+
+- Add sound/notification options for session end
+- Persist settings in localStorage
+- Add keyboard shortcuts
+- Provide presets (e.g., classic 25/5 Pomodoro)
